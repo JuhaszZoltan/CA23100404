@@ -26,7 +26,14 @@ namespace CA23100404
             var mgj = bank.SingleOrDefault(k => k.Betu == input);
             Console.WriteLine(mgj is null ? "Nincs ilyen karakter a bankban!" : $"\n{mgj.Kep}");
 
+            var dekodol = Beolvas("dekodol.txt");
+
             Console.WriteLine("9. feladat: Dekódolás:");
+            foreach (var dk in dekodol)
+            {
+                var bk = bank.SingleOrDefault(k => k.Felismer(dk));
+                Console.Write(bk is null ? '?' : bk.Betu);
+            }
 
             Console.ReadKey(true);
         }

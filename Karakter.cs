@@ -28,6 +28,18 @@ namespace CA23100404
             }
         }
 
+        public bool Felismer(Karakter felismerendo)
+        {
+            for (int r = 0; r < Matrix.GetLength(0); r++)
+            {
+                for (int c = 0; c < Matrix.GetLength(1); c++)
+                {
+                    if (this.Matrix[r, c] != felismerendo.Matrix[r, c]) return false;
+                }
+            }
+            return true;
+        }
+
         public Karakter(char betu, bool[,] matrix)
         {
             Betu = betu;
